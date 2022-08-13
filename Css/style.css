@@ -1,1801 +1,996 @@
-.footer {
-    width: 100%;
-    background: #262626;
-    padding: 1.6rem 0 2.1rem;
-    text-align: center;
-    font-family: "Noto Sans"
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Author: AtypicalThemes
+Template: Strider - A Game Studio Template
+Version:	1.0
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+-------------------------------------------------------------------
+Table of contents
+
+    I.General
+    II.Page Prealoader
+    III.Header & Navigation
+    IV.Hero Section
+    V.About Section
+    VI.Games Section
+    VII.Team Section
+    VIII.Careers Section
+    IX.Contact Section
+    X.Footer
+    XI.404 Page
+    XII.Responsive Styles
+
+-------------------------------------------------------------------
+[Color codes]
+
+Background:	#111; (black)
+Content:	#FFF; (white)
+Footer:		#070707; (black)
+
+a (standard):	#F5F5F5; (white)
+a (hover): #32e4e4; (orange)
+a (visited):	#32e4e4;
+a (active):	#32e4e4;
+
+[Colors]
+
+Primary Color: #32e4e4;
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500'); /* Raleway Font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
+@font-face {
+    font-family: 'Anurati';
+    src: url('../fonts/Anurati-Regular.otf');
 }
 
-.footer hr {
-    margin: 1rem 0 0
+/* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
+/* -Color- */
+.colored {
+    color: #32e4e4;
 }
-
-.footer nav {
-    padding: 1rem 0 0
+/* -Link Styling- */
+a {
+    color: #12f3f3;
+    font-family: Raleway, sans-serif;
+	text-decoration: none;
 }
-
-.footer nav,
-.footer ul {
-    width: 100%;
-    display: flex;
-    place-content: center;
-    place-items: center
-}
-
-.footer ul {
-    list-style-type: none;
-    flex-direction: row;
-    flex-wrap: wrap
-}
-
-.footer .footer-link {
-    padding: .1rem 3rem
-}
-
-.footer .footer-link a {
-    color: #fff;
-    font-family: "Noto Sans";
+a:visited {
+    color: #222;
     text-decoration: none;
-    font-size: .9rem
 }
-
-.footer .footer-link a:hover {
-    color: #bfbfbf
+a:hover {
+    color: #32e4e4;
+	text-decoration: underline;
 }
-
-.footer .footer-link a:focus {
-    outline: none
+a:active {
+    color: #32e4e4;
+    text-decoration: underline;
 }
-
-.footer .footer-link a:focus-visible {
-    text-decoration: underline
-}
-
-.footer .footer-cards {
-    display: flex;
-    flex-direction: row;
-    place-content: center;
-    padding: 1rem 0;
-    flex-wrap: wrap
-}
-
-.footer .footer-card-item {
-    text-align: center;
-    padding: 1rem 1.6rem;
-    max-width: 250px
-}
-
-.footer .footer-card-item p {
-    color: #fff;
-    padding: .2rem 0;
-    font-size: .9rem
-}
-
-.footer .footer-card-item span {
-    padding: .1rem 0;
-    font-size: .8rem;
-    color: #8c8c8c
-}
-
-.footer .footer-card-icon {
-    display: flex;
-    place-content: center;
-    padding: .4rem
-}
-
-.footer .footer-card-icon img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    box-shadow: 0 0 6px 2px rgba(0, 0, 0, .4)
-}
-
-.footer .footer-card-icon a {
-    border: 1px solid transparent
-}
-
-.footer .footer-card-icon a:focus-visible {
-    outline: none;
-    border-color: #fff
-}
-
-.footer .footer-card-icon a:hover img {
-    -webkit-filter: brightness(69%);
-    filter: brightness(69%)
-}
-
-.footer a.copyright {
-    color: #999;
-    font-size: 1rem;
-    text-decoration: none
-}
-
-.footer a.copyright:hover {
-    text-decoration: underline
-}
-
-.navbar {
-    background: #262626;
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    z-index: 100;
-    padding-top: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .4666666666666667)
-}
-
-.navbar .container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: space-between
-}
-
-.navbar .header-nav {
-    height: 100%
-}
-
-.navbar .header-nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    height: 100%
-}
-
-.nav-logo {
-    width: -webkit-max-content;
-    width: max-content;
-    height: 40px;
-    color: #fff;
+a:focus {
+    color: #32e4e4;
     text-decoration: none;
-    font-family: "Minecraft";
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    text-anchor: start;
-    place-content: center;
-    font-size: 1.1rem;
-    place-items: center;
-    font-weight: 100;
-    font-style: normal
 }
-
-.nav-logo img {
-    width: 40px;
-    height: 40px;
-    margin: 0 1rem 0 0
-}
-
-.nav-logo:hover {
-    color: #bebebe
-}
-
-.nav-logo:focus-visible {
-    outline: none;
-    text-decoration: underline
-}
-
-.navbar-link {
-    height: 100%;
-    display: flex;
-    place-items: center
-}
-
-.navbar-link img,
-.navbar-link svg {
-    width: 32px;
-    height: 32px
-}
-
-.navbar-link img {
-    image-rendering: crisp-edges;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated
-}
-
-@-webkit-keyframes aaab {
-    0% {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-
-    10% {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-
-    to {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-}
-
-@keyframes aaab {
-    0% {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-
-    10% {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-
-    to {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-}
-
-@-webkit-keyframes aabb {
-    0% {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-
-    10% {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-
-    to {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-}
-
-@keyframes aabb {
-    0% {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-
-    10% {
-        -webkit-transform: translate(0);
-        transform: translate(0)
-    }
-
-    to {
-        -webkit-transform: translate(100%);
-        transform: translate(100%)
-    }
-}
-
-.navbar-link-cont {
-    display: block;
-    color: #fff;
-    padding: .2rem .6rem;
-    height: 100%;
-    text-decoration: none;
-    font-family: "Minecraft";
-    display: flex;
-    place-items: center;
-    border: 1px solid transparent;
-    border-radius: 0
-}
-
-.navbar-link-cont:hover {
-    background: hsla(0, 0%, 100%, .2)
-}
-
-.navbar-link-cont:hover span {
-    font-size: 1rem;
-    margin-left: .3rem
-}
-
-.navbar-link-cont span {
-    transition: font .3s, margin .3s;
-    font-size: 0;
-    margin-left: 0
-}
-
-.navbar-link-cont:focus-visible {
-    outline: none;
-    border: 1px solid #fff
-}
-
-.navbar-link-cont:focus-visible span {
-    font-size: 1rem;
-    margin-left: .3rem
-}
-
-.hamburger-btn,
-.search-btn {
-    display: flex;
-    place-items: center;
-    place-content: center;
-    background: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    padding: .2rem .6rem
-}
-
-.hamburger-btn:focus,
-.search-btn:focus {
-    outline: none
-}
-
-.hamburger-btn:focus-visible,
-.search-btn:focus-visible {
-    border-color: #fff
-}
-
-.hamburger-btn svg,
-.search-btn svg {
-    width: 32px;
-    height: 32px
-}
-
-.hamburger-btn:hover,
-.search-btn:hover {
-    background: hsla(0, 0%, 100%, .2)
-}
-
-.hamburger-btn:disabled,
-.search-btn:disabled {
-    -webkit-filter: brightness(60%);
-    filter: brightness(60%)
-}
-
-.hamburger-btn {
-    display: none
-}
-
-@media screen and (max-width:450px) {
-    .nav-logo {
-        font-size: 0
-    }
-}
-
-.hamburger-btn {
-    display: flex
-}
-
-.sidebar {
-    position: absolute;
-    background: #262626;
-    right: -100%;
-    top: 50px;
-    width: 300px;
-    height: calc(100vh - 50px);
-    transition: -webkit-transform .2s ease;
-    transition: transform .2s ease;
-    transition: transform .2s ease, -webkit-transform .2s ease;
-    z-index: -1;
-    overflow-y: auto;
-    box-shadow: -2px 0 2px 0 rgba(0, 0, 0, .4666666666666667);
-    font-family: "Noto Sans"
-}
-
-.sidebar::-webkit-scrollbar {
-    width: 10px
-}
-
-.sidebar .container {
-    display: flex;
-    width: 100%;
-    height: -webkit-max-content;
-    height: max-content;
-    padding: 1rem 0;
-    overflow-x: hidden
-}
-
-.sidebar.open {
-    display: none;
-    right: 0
-}
-
-.sidebar nav {
-    overflow-y: auto;
-    width: 100%;
-    overflow-x: hidden
-}
-
-.sidebar nav h3 {
-    font-family: "MinecraftTen";
-    color: #fff;
-    font-weight: 100;
-    font-size: 1.8rem;
-    margin-left: 1.2rem;
-    padding: 1.2rem 0 0
-}
-
-.sidebar nav h3:first-of-type {
-    padding-top: 0
-}
-
-.sidebar nav h4 {
-    font-family: "MinecraftTen";
-    color: #ccc;
-    font-weight: 100;
-    font-size: 1.5rem;
-    margin-left: 1.2rem;
-    padding: 1.2rem 0 .7rem
-}
-
-.sidebar nav ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap
-}
-
-.sidebar nav li {
-    width: 100%;
-    color: #fff
-}
-
-.sidebar nav a {
-    display: block;
-    width: 100%;
-    padding: .5rem 2rem;
-    color: #2bbd28;
-    font-size: .95rem;
-    text-decoration: none;
-    border: 1px solid transparent
-}
-
-.sidebar nav a:focus {
-    outline: none
-}
-
-.sidebar nav a:focus-visible {
-    border-color: #fff
-}
-
-.sidebar nav a:hover {
-    background: hsla(0, 0%, 100%, .2);
-    color: #fff
-}
-
-.sidebar {
-    display: none
-}
-
-.sidebar.open {
-    display: block
-}
-
-.searchsidebar {
-    position: absolute;
-    background: #262626;
-    top: 50px;
-    right: 100%;
-    display: none;
-    width: 400px;
-    height: calc(100vh - 50px);
-    z-index: -1
-}
-
-.searchsidebar .container {
-    display: flex;
-    height: -webkit-max-content;
-    height: max-content;
-    padding: 1rem 0
-}
-
-.searchsidebar.open {
-    display: block;
-    right: 0
-}
-
-.searchsidebar input {
-    width: 100%;
-    height: 40px;
-    background: #161616;
-    border: 1px solid #161616;
-    padding: 0 1rem
-}
-
-.main-section {
-    position: relative;
-    background: #363636 url(/static/media/original_image.85b3371b.jpg);
-    background-color: rgba(0, 0, 0, .5647058823529412);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    place-content: center;
-    place-items: center;
-    text-align: center
-}
-
-.main-section .arrow-down {
-    width: 30px;
-    height: 30px
-}
-
-.main-section h3 {
-    padding: 1rem 0;
-    font-family: "Minecraft";
-    text-shadow: 0 2.5px 0 #000;
-    color: #fff;
-    word-spacing: 5px;
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    width: 85%;
-    font-weight: 100;
-    font-style: normal
-}
-
-.main-section .logo {
-    max-width: 660px;
-    width: 660px;
-    margin-bottom: 1.8rem
-}
-
-.main-section .buttons-group0,
-.main-section .buttons-group1 {
-    display: flex;
-    flex-direction: row;
-    grid-column-gap: 1rem;
-    -webkit-column-gap: 1rem;
-    column-gap: 1rem;
-    grid-row-gap: 1rem;
-    row-gap: 1rem;
-    place-content: center;
-    flex-wrap: wrap;
-    padding: 1.9rem 0
-}
-
-.main-section .buttons-group1 {
-    grid-column-gap: 1rem;
-    -webkit-column-gap: 1rem;
-    column-gap: 1rem;
-    padding: 1.2rem 0 0
-}
-
-.arrow-scroll {
-    position: absolute;
-    bottom: 3rem
-}
-
-.arrow-scroll svg {
-    width: 40px;
-    height: 40px;
-    -webkit-animation: scrollArrowAnim 1s ease infinite;
-    animation: scrollArrowAnim 1s ease infinite
-}
-
-@media screen and (max-height:700px)and (max-width:400px) {
-    .arrow-scroll {
-        display: none
-    }
-}
-
-@-webkit-keyframes scrollArrowAnim {
-    0% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px)
-    }
-
-    50% {
-        -webkit-transform: translateY(15px);
-        transform: translateY(15px)
-    }
-
-    to {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px)
-    }
-}
-
-@keyframes scrollArrowAnim {
-    0% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px)
-    }
-
-    50% {
-        -webkit-transform: translateY(15px);
-        transform: translateY(15px)
-    }
-
-    to {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px)
-    }
-}
-
-@media screen and (max-width:800px) {
-    .main-section .logo {
-        max-width: 660px;
-        width: 70%
-    }
-
-    .main-section .buttons-group0,
-    .main-section .buttons-group1 {
-        width: 85%
-    }
-}
-
-.home-show-sections {
-    background: #323232
-}
-
-.home-show-sections .container {
-    display: flex;
-    flex-direction: column;
-    grid-row-gap: 2rem;
-    row-gap: 2rem;
-    padding: 3rem 0 4rem;
-    place-items: center
-}
-
-.home-show-sections .being-built {
-    margin: 2rem 0 0
-}
-
-@media screen and (max-height:600px) {
-    .main-section .logo {
-        max-width: 70%;
-        margin-bottom: 1.8rem
-    }
-
-    .main-section h3 {
-        padding: 0
-    }
-}
-
-@media screen and (max-height:520px) {
-    .main-section .logo {
-        display: none
-    }
-}
-
-.button-text {
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-    background: linear-gradient(#009147, #008542);
-    border: 0;
-    font-family: "MinecraftTen";
-    color: #fff;
-    padding: .6rem .9rem;
-    font-size: 1.4rem;
-    margin: 4px;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    font-weight: 100;
-    font-style: normal;
-    text-shadow: 0 3px 0 rgba(0, 0, 0, .25882352941176473);
-    --border: #000;
-    --top-border: #27ce40;
-    --bottom-border: #064d2a;
-    -webkit-user-select: none;
-    user-select: none;
-    box-shadow: 0 -3px 0 0 var(--top-border), 0 3px 0 0 var(--bottom-border), -3px 0 0 0 #0c6e3d, 3px 0 0 0 #0c6e3d, -2px -5px 0 0 var(--border), 2px -5px 0 0 var(--border), -5px -2px 0 0 var(--border), 5px -2px 0 0 var(--border), -2px 5px 0 0 var(--border), 2px 5px 0 0 var(--border), -5px 2px 0 0 var(--border), 5px 2px 0 0 var(--border)
-}
-
-.button-text::selection {
-    background: none
-}
-
-.button-text:hover {
-    background: linear-gradient(#0a9a50, #0a8f4c)
-}
-
-.button-text:active {
-    background: #008943;
-    --top-border: #064d2a;
-    --bottom-border: #27ce40
-}
-
-.button-text.focused,
-.button-text:focus {
-    outline: none;
-    --border: #fff
-}
-
-.button-text.social {
-    display: flex;
-    place-content: center;
-    place-items: center;
-    width: 40px;
-    padding: .3rem
-}
-
-.button-text.social svg {
-    width: 100%;
-    height: 100%
-}
-
-.button-text.button-icon {
-    display: flex;
-    place-content: center;
-    place-items: center;
-    width: 40px;
-    padding: .3rem
-}
-
-.button-text.button-icon svg {
-    width: 100%;
-    height: 100%
-}
-
-.button-text.disabled {
-    pointer-events: none;
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%)
-}
-
-.home-show-section {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    padding: .6rem 0;
-    justify-content: space-between;
-    width: 100%;
-    place-content: center
-}
-
-.home-show-section img {
-    width: 80%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
-    border-radius: 4px;
-    transition: -webkit-transform .25s ease;
-    transition: transform .25s ease;
-    transition: transform .25s ease, -webkit-transform .25s ease
-}
-
-.home-show-section img:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05)
-}
-
-.home-show-section .cont {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    place-content: center;
-    place-items: center;
-    width: 51%
-}
-
-.home-show-section .cont h3 {
-    font-family: "MinecraftTen";
-    color: #fff;
-    font-size: 1.8rem;
-    text-shadow: 0 3px 0 #000;
-    font-weight: 100;
-    font-style: normal
-}
-
-.home-show-section .cont p {
-    color: #fff;
-    width: 90%;
-    font-size: 1.2rem
-}
-
-.home-show-section .img {
-    position: relative;
-    width: 48%;
-    -webkit-perspective: 500px;
-    perspective: 500px
-}
-
-.home-show-section .img img {
-    width: 100%;
-    -webkit-transform: rotateY(-3deg) rotateX(1deg);
-    transform: rotateY(-3deg) rotateX(1deg);
-    transition: -webkit-transform .25s ease;
-    transition: transform .25s ease;
-    transition: transform .25s ease, -webkit-transform .25s ease
-}
-
-.home-show-section .img:hover img {
-    -webkit-transform: rotateY(-3deg) rotateX(1deg) scale(1.05);
-    transform: rotateY(-3deg) rotateX(1deg) scale(1.05)
-}
-
-.home-show-section.inverted .cont {
-    order: 2
-}
-
-.home-show-section.inverted .img {
-    order: 1
-}
-
-.home-show-section.inverted .img img {
-    -webkit-transform: rotateY(3deg) rotateX(1deg);
-    transform: rotateY(3deg) rotateX(1deg)
-}
-
-.home-show-section.inverted .img:hover img {
-    -webkit-transform: rotateY(3deg) rotateX(1deg) scale(1.05);
-    transform: rotateY(3deg) rotateX(1deg) scale(1.05)
-}
-
-.releases {
-    background: #323232;
-    height: 100%
-}
-
-.releases .releases-section {
-    background: #363636 url(/static/media/1.11_exploration_update_java.4ad94e47.jpg);
-    background-color: rgba(0, 0, 0, .4117647058823529);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    height: calc(31vh - 60px);
-    display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 50px
-}
-
-.releases .releases-section h2 {
-    font-size: 1.9rem;
-    text-shadow: 0 4px 0 #303030
-}
-
-.releases .releases-section h2,
-.releases .releases-section p {
-    font-family: "MinecraftFiveBold";
-    color: #fff;
-    font-weight: 100;
-    font-style: normal
-}
-
-.releases .releases-section p {
-    text-shadow: 0 3px 0 #303030;
-    font-size: 1.2rem
-}
-
-.releases main {
-    padding: 3rem 0;
-    height: -webkit-max-content;
-    height: max-content;
-    overflow: hidden
-}
-
-.releases main .container {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 1rem;
-    gap: 1rem
-}
-
-.releases hr {
-    border-color: #929292;
-    margin: .4rem 0
-}
-
-.releases h3 {
-    color: #fff;
-    font-family: "Noto Sans Bold";
-    font-size: 1rem;
-    padding: 0 0 .1rem
-}
-
-.details-body br:last-child {
-    display: block;
-    height: 0;
-    line-height: 0;
-    margin: 0;
-    padding: 0
-}
-
-.faqdetails {
-    border: 1px solid #5e5e5e;
-    font-family: "Noto Sans";
-    font-weight: 100
-}
-
-.faqdetails .faqdetails-content {
-    display: none;
-    padding: 1rem;
-    color: #fff;
-    -webkit-animation: sweep .2s ease;
-    animation: sweep .2s ease;
-    transition: max-height .1s ease;
-    overflow: hidden;
-    max-height: 0
-}
-
-.faqdetails .faqdetails-content img {
-    max-width: 100%
-}
-
-.faqdetails .faqdetails-content code {
-    background: rgba(0, 0, 0, .4117647058823529);
-    padding: 3px 6px;
-    border-radius: 4px
-}
-
-.faqdetails .faqdetails-content p {
-    padding: .4rem 0;
-    font-size: .9rem
-}
-
-.faqdetails .faqdetails-content h5 {
-    font-size: .8rem
-}
-
-.faqdetails .faqdetails-content a {
-    color: #26a824;
-    font-size: .9rem
-}
-
-.faqdetails .faqdetails-content a:hover {
-    color: #1c7e1b
-}
-
-.faqdetails .faqdetails-content a:focus-visible {
-    outline: 1px solid #fff
-}
-
-.faqdetails .faqdetails-content img {
-    padding: .4rem 0
-}
-
-.faqdetails .faqdetails-content img:last-child {
-    padding: .4rem 0 0
-}
-
-.faqdetails .faqdetails-content p:first-child {
-    padding: 0
-}
-
-.faqdetails.open-semi {
-    height: auto
-}
-
-.faqdetails.open-semi .faqdetails-content {
-    display: block
-}
-
-.faqdetails.open .faqdetails-content {
-    max-height: -webkit-max-content;
-    max-height: max-content;
-    transition: max-height 1s ease-in
-}
-
-@-webkit-keyframes sweep {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px)
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-}
-
-@keyframes sweep {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px)
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0)
-    }
-}
-
-.faqdetails.open .faqdetails-header span {
-    -webkit-transform: rotate(0);
-    transform: rotate(0)
-}
-
-.faqdetails-header {
-    display: flex;
-    cursor: pointer;
-    place-items: center;
-    color: #fff;
-    height: -webkit-max-content;
-    height: max-content;
-    font-weight: 100;
-    font-size: 1rem;
-    font-family: "Noto Sans Bold";
-    padding: .5rem .6rem;
-    border: 1px solid transparent;
-    -webkit-user-select: none;
-    user-select: none
-}
-
-.faqdetails-header svg {
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges
-}
-
-.faqdetails-header span {
-    width: 14px;
-    margin: 0 .4rem 0 0;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-    transition: -webkit-transform .2s;
-    transition: transform .2s;
-    transition: transform .2s, -webkit-transform .2s
-}
-
-.faqdetails-header:hover {
-    background: hsla(0, 0%, 100%, .13333333333333333)
-}
-
-.faqdetails-header:focus {
-    outline: none
-}
-
-.faqdetails-header:focus-visible {
-    border: 1px solid #fff
-}
-
-.faqdetails a {
-    color: #2bbd28;
-    text-decoration: none
-}
-
-.faqdetails a:hover {
-    color: #21931f
-}
-
-.faqdetails .github-link {
-    display: block;
-    width: -webkit-max-content;
-    width: max-content;
-    margin: 1rem 0 0;
-    text-decoration: none
-}
-
-.faqdetails .faqdetails-content.md ul {
-    margin-left: 1.2rem
-}
-
-.cat-selection {
-    display: grid;
-    flex-direction: row;
-    width: 100%;
-    grid-gap: 1rem 1rem;
-    gap: 1rem 1rem;
-    place-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(49%, 1fr))
-}
-
-.cat-selection .cat-link {
-    box-sizing: initial;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, .27058823529411763);
-    padding: 1rem;
-    display: flex;
-    place-content: center;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border: 1px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, .27058823529411763);
-    text-decoration: none
-}
-
-.cat-selection .cat-link:hover img {
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%)
-}
-
-.cat-selection .cat-link:focus {
-    outline: none
-}
-
-.cat-selection .cat-link:focus-visible {
-    border: 1px solid #fff
-}
-
-.cat-selection .cat-link h4 {
-    font-family: "MinecraftFive";
-    color: #fff;
-    font-size: 1.1rem;
+/* -Resets- */
+html, body { 
+    background-color: #111;
+    background: url(../images/bg.png);
+    background-repeat: repeat;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 1.5rem; /* 24px */
+    max-width: 100%;
+	overflow-x: hidden;
+}
+/* -Full width fluid container- */
+.full-width {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* -Text Styling */
+h1,h2,h3,h4,h5,h6 {
+	font-family: Raleway, sans-serif;
+}
+h1 {
+    font-size: 2.25rem; /* 36px */
+    font-family: Anurati, sans-serif;
+    letter-spacing: 5px;
+} 
+h2 {
+    font-size: 1.50rem; /* 24px */
+    font-weight: 500;
+}
+h3 {
+    font-size: 1.25rem; /* 20px */
     font-weight: 400;
-    text-shadow: 0 4px 0 rgba(0, 0, 0, .4117647058823529)
 }
-
-.cat-selection .cat-link p {
-    color: #fff;
-    font-family: "Noto Sans";
-    font-size: .9rem;
-    text-shadow: 0 2px 0 rgba(0, 0, 0, .4117647058823529)
+h4 {
+    font-size: 1.10rem;
+    font-weight: 300;
 }
-
-.cat-selection .cat-link img {
-    top: 0;
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    -webkit-transform: translateY(-40%);
-    transform: translateY(-40%);
-    transition: -webkit-filter .15s ease;
-    transition: filter .15s ease;
-    transition: filter .15s ease, -webkit-filter .15s ease;
-    -webkit-filter: brightness(50%);
-    filter: brightness(50%);
-    width: 100%
+p {
+    font-family: Open Sans, sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    padding: 5px 5px 5px 0;
+    margin: 0;
 }
-
-.searchbox {
-    display: flex;
-    height: 38px;
-    min-height: 38px;
-    background: #121212;
-    border-radius: 4px;
-    place-items: center;
-    border: 1px solid #121212
+.strong {
+    font-weight: bold;
 }
-
-.searchbox:hover {
-    background: #0d0d0d
+.subtle {
+	color: #999;
 }
-
-.searchbox:focus-within {
-    border: 1px solid #fff
+.spaced {
+    letter-spacing: 5px;
 }
-
-.searchbox .reset-btn {
-    cursor: pointer;
-    color: #fff;
-    background: none;
-    border: none;
-    margin: 4px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    padding: 0 2px;
-    place-content: center;
-    place-items: center
+.text-center {
+	text-align: center;
 }
-
-.searchbox .reset-btn:hover {
-    background: #2b2b2b
+.text-left {
+    text-align: left;
 }
-
-.searchbox .reset-btn svg {
-    width: 11px;
-    height: 11px
+.text-right {
+    text-align: right;
 }
-
-.searchbox .reset-btn svg path {
-    fill: #ccc
+ul {
+    list-style-type: none;
+    padding: 0;
 }
-
-.searchbox .search-icon {
-    width: 16px;
-    height: 16px;
-    max-width: 16px;
-    max-height: 16px;
-    min-width: 16px;
-    min-height: 16px;
-    margin-left: 10px
+/* -Margins and Floats- */
+.floated-left {
+     float: left;
 }
-
-.searchbox .search-icon path {
-    fill: #eee
+.floated-right {
+    float: right;
 }
-
-.searchbox input[type=text] {
-    background: none;
-    border: none;
-    font-family: "Noto Sans";
-    height: 100%;
-    color: #fff;
+.inline {
+	display: inline;
+}
+.offset {
+	margin-left: 10px;
+}
+.tiny-margin {
+    margin-bottom: 1.5em /* 24px */
+}
+.small-margin {
+	margin-bottom: 3em; /* 48px */
+}
+.medium-margin {
+	margin-bottom: 6em; /* 96px */
+}
+.large-margin {
+	margin-bottom: 12em; /* 192px */
+}
+/* -<hr>- */
+hr {
     width: 100%;
-    caret-color: #fff;
-    padding: 0 .4rem
+    height: 2px;
+    background: #32e4e4;
+    margin: 20px 0;
+    border: none;
 }
-
-.searchbox input[type=text]:focus {
-    outline: none
+.hr-short {
+    width: 100px;
+    height: 2px;
+    margin: 5px auto;
 }
-
-.searchbox .results {
-    padding: 0 5px;
-    color: #fff;
-    margin: 4px 7px 4px 10px;
-    display: flex;
-    flex-direction: row;
-    width: -webkit-max-content;
-    width: max-content;
-    min-width: -webkit-max-content;
-    min-width: max-content;
-    background: #2b2b2b;
-    height: 22px;
-    position: relative;
-    font-size: .9rem
-}
-
-.searchbox .results:before {
-    position: relative;
+.short-hr-left::after {
+    border-top: 2px solid;
+    border-color: #32e4e4;
     content: "";
     display: block;
-    width: 1px;
-    height: 20px;
-    top: 1px;
-    left: -12px;
-    background: #777
-}
-
-.faq {
-    background: #323232;
-    height: 100%
-}
-
-.faq .faq-section {
-    background: #363636 url(/static/media/1.0_pocket_edition.badf78f0.jpg);
-    background-color: rgba(0, 0, 0, .4117647058823529);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    height: calc(31vh - 60px);
-    display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 50px
-}
-
-.faq .faq-section h2 {
-    font-size: 1.9rem;
-    text-shadow: 0 4px 0 #303030
-}
-
-.faq .faq-section h2,
-.faq .faq-section p {
-    font-family: "MinecraftFiveBold";
-    color: #fff;
-    font-weight: 100;
-    font-style: normal
-}
-
-.faq .faq-section p {
-    text-shadow: 0 3px 0 #303030;
-    font-size: 1.2rem
-}
-
-.faq main {
-    padding: 3rem 0;
-    height: -webkit-max-content;
-    height: max-content;
-    overflow: hidden
-}
-
-.faq main .container {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 1rem;
-    gap: 1rem
-}
-
-.faq main h3 {
-    color: #fff;
-    font-family: "Noto Sans Bold";
-    font-size: 1rem;
-    padding: 0 0 .1rem
-}
-
-.faq hr {
-    border-color: #929292;
-    margin: .4rem 0
-}
-
-.go-back {
-    display: flex;
-    flex-direction: row;
-    place-items: center;
-    width: -webkit-max-content;
-    width: max-content;
-    color: #fff;
-    grid-column-gap: .5rem;
-    -webkit-column-gap: .5rem;
-    column-gap: .5rem;
-    font-family: "MinecraftFive";
-    text-decoration: none;
-    font-size: 1.125rem;
-    margin-top: -20px;
-    margin-bottom: 15px;
-    font-weight: 100;
-    font-style: normal;
-    text-shadow: 0 3px rgba(0, 0, 0, .4117647058823529);
-    -webkit-user-select: none;
-    user-select: none
-}
-
-.go-back::selection {
-    background: none
-}
-
-.go-back svg {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content
-}
-
-.go-back:hover {
-    -webkit-filter: brightness(80%);
-    filter: brightness(80%)
-}
-
-.go-back:focus {
-    outline: none
-}
-
-.go-back:focus-visible {
-    text-decoration: underline
-}
-
-.docs {
-    background: #323232;
-    height: 100%;
-    margin-top: 50px;
-    font-family: "Noto Sans";
-    font-size: .95rem
-}
-
-.docs main {
-    padding: 2rem
-}
-
-.docs main h2 {
-    font-family: "MinecraftTen";
-    color: #fff;
-    font-size: 26px;
-    text-shadow: 0 4px 0 rgba(0, 0, 0, .4117647058823529);
-    padding: 1rem 0;
-    text-rendering: optimizeLegibility;
-    font-weight: 100;
-    font-style: normal
-}
-
-.docs main h2:first-child {
-    padding-top: 0
-}
-
-.docs main ul {
-    margin-left: 2rem;
-    color: #fff
-}
-
-.docs main li {
-    padding: .1rem 0
-}
-
-.docs main a {
-    color: #2bbd28;
-    text-decoration: none
-}
-
-.docs main a:hover {
-    color: #21931f
-}
-
-.docs main a:focus {
-    outline: none
-}
-
-.docs main a:focus-visible {
-    text-decoration: underline
-}
-
-.docs .md {
-    font-family: "Noto Sans"
-}
-
-.docs .md h1 {
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    font-family: "Noto Sans Bold";
-    font-weight: 100;
-    padding: 0 0 1.2rem
-}
-
-.docs .md h2 {
-    padding: 1rem 0 .5rem
-}
-
-.docs .md h3 {
-    color: #fff;
-    padding: 1rem 0
-}
-
-.docs .md ul {
-    list-style-type: "- "
-}
-
-.docs .md ol,
-.docs .md ul {
-    margin-left: 1rem;
-    padding: 1rem 0
-}
-
-.docs .md li,
-.docs .md p {
-    color: #d3d3d3
-}
-
-.docs .md p {
-    margin-left: .4rem
-}
-
-.docs .md code {
-    background: #222;
-    border-radius: 3px;
-    padding: 2px 3px;
-    margin: 0 .1rem;
-    color: #ddd
-}
-
-.docs .md-go-back {
-    padding: 1rem 0 0;
-    color: #fff
-}
-
-.docs .md-go-back a,
-.docs .md-go-back a:hover {
-    color: #fff
-}
-
-.credits-card {
-    text-align: center;
-    padding: 1rem 1.6rem;
-    font-family: "Noto Sans";
-    font-size: .9rem
-}
-
-.credits-card .credits-card-icon {
-    display: flex;
-    place-content: center;
-    padding: .4rem
-}
-
-.credits-card .credits-card-icon img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    box-shadow: 0 0 6px 2px rgba(0, 0, 0, .4)
-}
-
-.credits-card .credits-card-icon a {
-    border: 1px solid transparent
-}
-
-.credits-card .credits-card-icon a:focus-visible {
-    outline: none;
-    border-color: #fff
-}
-
-.credits-card .credits-card-icon a:hover img {
-    -webkit-filter: brightness(69%);
-    filter: brightness(69%)
-}
-
-.credits-card p {
-    color: #fff;
-    font-weight: 550;
-    font-size: 1rem;
-    padding: .2rem 0
-}
-
-.credits {
-    background: #323232;
-    height: 100%
-}
-
-.credits .credits-section {
-    background: #363636 url(/static/media/1.0_pocket_edition.badf78f0.jpg);
-    background-color: rgba(0, 0, 0, .4117647058823529);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    height: calc(31vh - 60px);
-    display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 50px
-}
-
-.credits .credits-section h2 {
-    font-family: "MinecraftFiveBold";
-    color: #fff;
-    font-size: 1.9rem;
-    text-shadow: 0 4px 0 #303030
-}
-
-.credits .credits-section p {
-    font-family: "MinecraftFiveBold";
-    color: #fff;
-    text-shadow: 0 3px 0 #303030;
-    font-size: 1.2rem;
-    width: 90%
-}
-
-.credits main {
-    padding: 3rem 0
-}
-
-.credits h2 {
-    font-family: "MinecraftTen";
-    color: #fff;
-    text-shadow: 0 5px 0 rgba(0, 0, 0, .5019607843137255);
-    font-size: 2rem;
-    width: 100%;
-    text-align: center;
-    font-weight: 100;
-    font-style: normal
-}
-
-.credits ul {
-    list-style-type: none;
-    display: flex;
-    place-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 0 3.2rem
-}
-
-.credits ul:last-child {
-    margin-bottom: 0
-}
-
-.downloads {
-    background: #323232;
-    height: 100%;
-    margin-top: 50px
-}
-
-.downloads h2 {
-    color: #fff;
-    font-family: "MinecraftTen";
-    font-weight: 100;
-    font-style: normal;
-    width: 100%;
-    text-align: center;
-    font-size: 1.8rem;
-    padding: 0 0 2rem
-}
-
-.downloads .button-group {
-    display: flex;
-    flex-direction: row;
-    grid-gap: 0 3rem;
-    gap: 0 3rem;
-    width: 100%;
-    place-content: center
-}
-
-.downloads .button-text {
-    font-size: 1.4rem
-}
-
-.downloads main {
-    padding: 3rem 0
-}
-
-.notfound {
-    background: #323232;
-    height: 100%;
-    margin-top: 50px;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    place-content: center;
-    place-items: center;
-    color: #fff
-}
-
-.notfound h2 {
-    font-size: 2.2rem;
-    padding-bottom: 2rem
-}
-
-.search-route {
-    background: #323232;
-    height: 100%;
-    margin-top: 50px;
-    padding: 3rem 0
-}
-
-.search-route h3 {
-    color: #fff;
-    font-family: "Noto Sans Bold";
-    font-size: 1rem;
-    padding: 0 0 .1rem
-}
-
-.line-h {
-    width: 100%;
-    background: #777;
     height: 1px;
-    margin: 1rem 0
+    width: 60px;
+    margin: 13px 0 0 0;
+}
+.short-hr-center::after {
+    border-top: 2px solid;
+    border-color: #32e4e4;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60px;
+    margin: 13px auto 0 auto;
+}
+/* General input fields */
+input {
+    height: 45px;
+    padding-left: 10px;
+    border: 1px solid #D4D4D4 !important;
+}
+input:focus {
+    border: 1px solid #333;
+    outline: none;
+}
+textarea {
+    height: 150px;
+	width: 100%;
+    max-width: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+    border: 1px solid #D4D4D4 !important;
+}
+textarea:focus {
+    border: 1px solid #333;
+    outline: none;
+}
+/* -General Button Styles */
+button {
+    outline: none !important;
+}
+.button {
+	background: #32e4e4;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+	display: block;
+	height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    padding: 5px 15px;
+    outline: none;
+	transition: all 0.2s ease;
+    cursor: pointer;
+}
+.button:hover {
+	background: #FFF;
+	color: #2B2B2B;
+}
+/* --------------------------- /////////// II. PAGE PRELOADER /////////// --------------------------- */
+/* -Loading Screen- */
+#loader-wrapper {
+    background: #111;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    z-index: 1050;
+}
+.loader-logo {
+    position: relative;
+    color: #FFF;
+    top: 43%;
+}
+#progress {
+    width: 0;
+    height: 2px;
+    background: #32e4e4;
+    position: relative;
+    top: 45%;
+}
+.loader-text {
+    position: relative;
+    color: #FFF;
+    top: 48%;
 }
 
-.search-item {
-    font-family: "Noto Sans"
+/* -Loading Screen Animation- */
+.loaded {
+    -moz-transform: translate3d(0px, -100%, 0px);
+    -webkit-transform: translate3d(0px, -100%, 0px);
+    -o-transform: translate(0px, -100%);
+    -ms-transform: translate(0px, -100%);
+    transform: translate3d(0px, -100%, 0px);
+    -webkit-transition: all 0.5s ease; 
+    transition: all 0.5s ease;
 }
 
-.search-item a {
-    color: #27ce40;
-    text-decoration: none
+/* --------------------------- /////////// III. HEADER & NAVIGATION /////////// --------------------------- */
+#logo {
+    font-family: Anurati, sans-serif;
+    font-size: 1.75rem; /* 28px */;
+    letter-spacing: 5px;
 }
-
-.search-item a:hover {
-    text-decoration: underline
+.navbar-dark {
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    z-index: 900;
+    transition: 0.3s;
 }
-
-.search-item .formatted-url {
-    font-family: "Noto Sans Bold";
-    color: #fff;
-    font-size: .85rem
+.scrolled {
+    background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+    z-index: 900;
 }
-
-.search-item .formatted-url i {
-    font-style: normal;
-    font-size: .7rem;
-    padding: 0 .2rem
+.nav-link {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 5px;
+    transition: 0.2s;
 }
-
-.search-item b {
-    font-family: "Noto Sans Bold";
-    font-weight: 100
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
 }
-
-.search-item p {
-    font-size: .95rem;
-    color: #fff
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #32e4e4;
 }
-
-.search-item p b {
-    font-size: .9rem
+.navbar-dark .navbar-nav .nav-link:active {
+    color: #32e4e4;
 }
-
-.search-results {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 1rem 0;
-    gap: 1rem 0
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #32e4e4;
 }
-
-@font-face {
-    font-family: "Minecraft";
-    src: url(/static/media/Minecraft.e01d4c33.ttf)
+.navbar-toggler {
+    border: none;
+    cursor: pointer;
 }
-
-@font-face {
-    font-family: "MinecraftFive";
-    src: url(/static/media/MinecraftFive-Regular.83e5279f.ttf);
-    font-weight: 100;
-    font-style: normal
+#hamburger .icon-bar {
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #FFF;
+    margin: 7px 0;
+    transition: .3s ease-in-out;
 }
-
-@font-face {
-    font-family: "MinecraftFiveBold";
-    src: url(/static/media/MinecraftFive-Bold.3f655b4b.ttf)
+/* - Mobile menu animation - */
+#hamburger .icon-bar:nth-child(1) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
 }
-
-@font-face {
-    font-family: "MinecraftTen";
-    src: url(/static/media/MinecraftTen.afc85760.ttf);
-    font-weight: 100;
-    font-style: normal
+#hamburger .icon-bar:nth-child(2) {
+   -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
 }
-
-@font-face {
-    font-family: "Noto Sans";
-    src: url(/static/media/NotoSans-Regular.a50ccd7e.ttf);
-    font-weight: 100;
-    font-style: normal
+#hamburger .icon-bar:nth-child(3) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
 }
-
-@font-face {
-    font-family: "Noto Sans Bold";
-    src: url(/static/media/NotoSans-Bold.11db879c.ttf);
-    font-weight: 100;
-    font-style: normal
+#hamburger.open .icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility
+#hamburger.open .icon-bar:nth-child(2) {
+    width: 0%;
+    opacity: 0;
 }
-
-html {
-    scroll-behavior: smooth
+#hamburger.open .icon-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
-
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
-}
-
-* {
-    scrollbar-color: #474747 #292929
-}
-
-::-webkit-scrollbar {
-    background: #292929;
-    width: 12px
-}
-
-::-webkit-scrollbar-thumb {
-    background: #474747
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #505050
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: #838383
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto
-}
-
-body {
+/* --------------------------- /////////// IV. HERO SECTION /////////// --------------------------- */
+/* -Hero Image- */
+.hero-unit {
+    background-color: #111;
+    background: url(../images/bg.png);
+    background-repeat: repeat;
+    min-height: 720px;
     height: 100vh;
-    min-height: 100vh;
-    background-color: #262626
+}
+/* -Particles- */
+#particles-web {
+    position: absolute;
+    top: 0;
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+/* -Hero Image Caption- */
+.hero-caption {
+    display: block;
+    position: relative;
+    margin-top: 40vh;
+    color: #FFF;
+	text-shadow: none; 
+    padding: 20px;
+    z-index: 5;
+    text-align: center;
+}
+.hero-caption h1 {
+    font-weight: 300;
+    font-size: 3rem;
+    font-family: Raleway, sans-serif;
 }
 
-#root,
-body {
-    display: flex;
-    flex-direction: column
+/* --------------------------- /////////// V. ABOUT SECTION /////////// --------------------------- */
+#support-image {
+    margin: 0 0 0 20%;
 }
-
-.pagination {
-    display: flex;
-    flex-direction: row;
-    place-content: center;
-    grid-gap: 0 2.2rem;
-    gap: 0 2.2rem;
-    margin-bottom: 1.2rem
+/* --------------------------- /////////// VI. GAMES SECTION /////////// --------------------------- */
+.game-tags {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 10px;
+    border-left: 2px solid #32e4e4;
 }
-
-.pagination .button-text {
-    width: 38px;
-    max-width: 38px;
-    height: 38px;
-    max-height: 38px
+.game-tags li {
+    display: inline;
+    margin: 0 0 0 15px;
+    font-family: Raleway, sans-serif;
+    font-size:1.10rem; /* 20px */;
+    font-weight: 500;
 }
-
-.pagination .pages-numbers {
-    display: flex;
-    flex-direction: row;
-    place-content: center;
-    grid-gap: 0 .8rem;
-    gap: 0 .8rem;
-    width: -webkit-max-content;
-    width: max-content
+.game-tags li a {
+    color: #FFF;
+    text-decoration: none;
 }
-
-/*# sourceMappingURL=main.b51a2dc4.chunk.css.map */
+.game-tags li a:hover {
+    color: #32e4e4;
+}
+.game-tags li a:focus {
+    color: #32e4e4;
+}
+.game-card {
+    width: 100%;
+    margin: 0 0 3.5em 0;
+    min-height: 270px;
+    height: auto;
+}
+.lightbox .lb-image {
+    border: 4px solid #111;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    border-left: 2px solid #32e4e4;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.overlay i {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+}
+.overlay:hover {
+    opacity: 1;
+}
+.game-card-left {
+    padding: 0;
+}
+.game-card-left img {
+    height: 100%;
+    width: 100%;
+    min-height: 270px;
+}
+.game-card-right {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 20px 40px;
+    margin: 0;
+}
+.game-card-right h2 {
+    margin-bottom: 0;
+}
+.game-card-right > .short-hr-left::after {
+    margin: 5px 0;
+}
+.tags {
+    font-size: 14px;
+    padding-top: 0;
+}
+.game-description {
+    margin: 35px 0;
+}
+/* -- Modal -- */
+.expand {
+    cursor: pointer;
+}
+.game-modal .modal-header {
+    height: 150px;
+    background-image: url(../images/modal_header_bg.png);
+    background-position: bottom;
+    background-size:  cover;
+    border-bottom: 1px solid #555;
+}
+.game-modal .modal-title {
+    margin: 5% 0 0 5%;
+}
+.game-modal img {
+    margin: 5px 0 50px 0;
+}
+.modal-vid {
+    width: 100%;
+    max-width: 768px;
+    height: 415px;
+    margin: 20px 0 60px 0;
+    border: none;
+}
+/* -- Buttons -- */
+.steam-btn {
+    display: inline-block;
+    margin: 25px 0 0 0;
+}
+.steam-btn a {
+    display: inline-block;
+    min-height: 55px;
+    min-width: 150px;
+    height: auto;
+    width: auto;
+    background: #DDD;
+    border-radius: 3px;
+    padding: 8px;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.steam-btn:hover a {
+    background: #000;
+    color: #FFF;
+}
+.steam-btn i {
+    float: left;
+}
+.steam-btn p {
+    float: right;
+    line-height: 20px;
+    font-weight: bold;
+}
+.button-store {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 5px 22px;
+    border-radius: 5px;
+    margin: 30px 10px 0 0;
+    color: #111;
+    background: #DDD;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.button-store:hover {
+    background: #000;
+    color: #FFF;
+}
+.button-store > i {
+    float: left;
+    display: inline;
+    margin-top: 5px;
+}
+.button-store  p {
+    float: right;
+    padding: 0 0 0 10px;
+}
+.reviews {
+    width: auto;
+    display: inline-block;
+    float: right;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+.reviews a {
+    color: #FFF;
+}
+.reviews a:hover {
+    color: #FFF;
+}
+.reviews a:active {
+    color: #FFF;
+}
+.reviews a:visited {
+    color: #FFF;
+}
+.score-card {
+    display: inline-block;
+    min-height: 70px;
+    min-width: 90px;
+    width: auto;
+    height: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    text-align: center;
+    margin: 0 5px 0 0;
+    padding: 5px;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+.score-card:hover {
+    background: #FFF;
+}
+.score-card:hover p {
+    color: #111;
+}
+.score-card p:nth-of-type(2) {
+    font-size: 14px;
+    padding-top: 0;
+}
+.score {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-bottom: 0;
+}
+.rating {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    text-align: center;
+    float: right;
+    border-radius: 2px;
+    margin: 20px 0 0 0;
+}
+.rating ul {
+    margin: 0;
+}
+.rating ul li {
+    display: inline;
+    margin: 0 5px 0 0;
+}
+.rating p {
+    font-size: 1.5rem;
+}
+/* --------------------------- /////////// VII. TEAM SECTION /////////// --------------------------- */
+#full-row {
+    width: 100%;
+}
+#team figure {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+#team figure img {
+    border-radius: 3px;
+    border-bottom: 2px solid #32e4e4;
+}
+.team-caption ul {
+    margin-top: 10px;
+}
+.team-caption ul li {
+    display: inline;
+    margin: 0 5px;
+}
+.team-caption ul li > a {
+    color: #EEE;
+}
+.team-caption ul li > a:hover {
+    color: #32e4e4;
+}
+.team-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    text-align: center; 
+    padding: 40% 20px 20px 20px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+#team figure:hover > .team-caption {
+    opacity: 1;
+}
+#team figure:hover > img {
+    filter: blur(2px);
+}
+.team-name {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+}
+.gallery-item {
+    padding: 0 2.5px;
+}
+.grid-gallery .row {
+    margin: 0 0 5px 0;
+}
+.overlay.gallery {
+    left: 0;
+    width: 100%;
+    border: none;
+}
+/* --------------------------- /////////// VIII. CAREERS SECTION /////////// --------------------------- */
+.job-card {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    border-left: 2px solid #32e4e4;
+    padding: 25px 35px;
+    margin: 10px 0;
+}
+.modal-content {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+}
+.modal-header {
+    border-bottom: 1px solid #32e4e4;
+}
+.modal-body > ul > li > p {
+    padding: 0px 5px;
+    display: inline;
+}
+.modal-body ul {
+    list-style: none;
+    margin: 10px 0 0 25px;
+}
+.modal-body ul li {
+    margin: 5px 0;
+}
+.modal-body ul li:before {
+    content: "\f101";
+    color: #32e4e4;
+    display: inline-block;
+    width: 1em;
+    margin-left: -10px;
+    font-family: fontawesome;
+}
+.modal-body .skill-list {   
+    margin: 10px 0;
+}
+.modal-body .skill-list li {
+    display: inline-block;
+    padding: 5px 15px 7px 15px;
+    margin: 5px 5px;
+    border: 1px solid #32e4e4;
+    border-radius: 20px;
+}
+.modal-body .skill-list li:before {
+    display: none;
+}
+.modal-body h3 {
+    margin-bottom: 0;
+}
+.modal-footer {
+    border-top: 1px solid #32e4e4;
+}
+.modal-footer button {
+    margin: 0;
+}
+.button.secondary {
+    background: #222;
+}
+.button.secondary:hover {
+    background: #FFF;
+}
+.close {
+    color: #FFF;
+    opacity: 1;
+    text-shadow: none;
+    cursor: pointer;
+}
+.close:hover {
+    color: #32e4e4;
+    opacity: 1;
+}
+/* -- Newsletter -- */
+#newsletter input {
+    width: 40%;
+    height: 45px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border: none !important;
+    padding: 0 0 0 20px;
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+}
+#newsletter button {
+    display: inline-block;
+    height: 43px;
+    width: auto;
+}
+/* --------------------------- /////////// IX. CONTACT SECTION /////////// --------------------------- */
+#contactForm {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 5%;
+    margin-top: 25px;
+}
+#contactForm input {
+    width: 100%;
+    color: #FFF;
+    background: none;
+    border-bottom: 2px solid #32e4e4 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    margin-bottom: 25px;
+}
+#contactForm textarea {
+    width: 100%;
+    color: #FFF;
+    background: none;
+    border-bottom: 2px solid #32e4e4 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    margin-bottom: 25px;
+}
+#contactForm .button {
+    margin-left: 0;
+    padding: 15px 25px;
+    font-size: 1.25rem;
+}
+/* - Warning and succes msg text- */
+.text-danger, .text-success {
+    font-family: Open Sans, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+#contact-info {
+    margin-top: 25px;
+}
+#contact ul li i {
+    color: #32e4e4;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 10px;
+    
+}
+#contact ul li p {
+    display: inline;
+    margin-left: 5px;
+}
+#contact ul li {
+    margin-bottom: 15px;
+}
+#map-canvas {
+    width: 100%;
+    height: 330px;
+    opacity: 0.9;
+}
+/* --------------------------- /////////// X. FOOTER /////////// --------------------------- */
+#footer {
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    background: #070707;
+    border-top: 2px solid #32e4e4;
+    padding: 20px 0 0 0;
+}
+.social-links {
+    float: right;
+}
+.social-links li {
+    display: inline;
+    margin-left: 15px;
+}
+.social-links li a {
+    color: #FFF;
+}
+.social-links li a:hover {
+    color: #32e4e4;
+}
+.social-links li a:focus {
+    color: #32e4e4;
+}
+#copyright {
+    float: left;
+}
+/* --------------------------- /////////// XI. 404 PAGE /////////// --------------------------- */
+#container-404 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#container-404 .row-fluid {
+     margin-top: 18%;
+}
+.text-404 h1 {
+    font-family: Anurati, sans-serif;
+    font-size: 4rem;
+}
+.text-404 a {
+    display: inline-block;
+    text-decoration: none;
+}
+/* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
+@media (max-width : 991px) {
+    .nav-item > a::first-letter {
+    color: #32e4e4;
+    }
+    .navbar-dark {
+        background-color: rgba(0,0,0,0.4); /* navbar background gradient */
+    }
+    .scrolled {
+        background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+    }
+    #footer {
+        text-align: center;
+        padding: 10px 0 0 0;
+    }
+    .social-links {
+        float: none;
+    }
+    #copyright {
+        float: none;
+        margin-bottom: 5px;
+    }
+    #container-404 .row-fluid {
+        margin-top: 40%;
+    }
+}
+@media (max-width : 767px) {
+    .large-margin {
+	   margin-bottom: 4em; /* 96px */
+    }
+    .medium-margin {
+        margin-bottom: 3em;
+    }
+    .small-margin {
+        margin-bottom: 2em;
+    }
+    .heading {
+        font-size: 1.50rem;
+    }
+    hr {
+        margin: 0;
+    }
+    #support-image {
+        display: block;
+        margin: 2em auto 0 auto;
+    }
+    .game-card {
+        margin: 0 0 3em 0;
+    }
+    .steam-btn {
+        display: block;
+        text-align: center;
+    }
+    .button-store:nth-of-type(2) {
+        float: right;
+    }
+    .reviews {
+        display: block;
+        margin: 15px auto 0 auto;
+        float: left;
+        width: 100%;
+    }
+    .rating {
+        display: block;
+        margin: 15px auto 0 auto;
+        float: none;
+    }
+    #team figure {
+        margin: 20px auto;
+    }
+    .gallery-item {
+        margin: 5px 0;
+    }
+    .grid-gallery .row {
+        margin: 0;
+    }
+    #newsletter input {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
+    #newsletter button {
+        width: 100%; 
+        display: block;
+    }
+    #contactForm {
+        margin: 0 0 3em 0;
+    }
+    .text-404 h1 {
+        font-size: 3.5rem;
+    }
+}
+@media (max-width : 480px) {
+    .game-card-left img {
+        min-height: 0;
+    }
+    .score-card {
+        margin: 5px 0;
+    }
+    .hero-caption h1 {
+        font-size: 2.5rem;
+    }
+    .button-store {
+        margin: 5px auto;
+    }
+    .button-store:nth-of-type(2) {
+        float: none;
+    }
+}
